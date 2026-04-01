@@ -1,4 +1,5 @@
 import { StrictMode } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
 import App from './App.tsx';
@@ -8,6 +9,8 @@ if (!root) throw new Error("Root container didn't found");
 
 createRoot(root).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
