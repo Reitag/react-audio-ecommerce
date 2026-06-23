@@ -1,5 +1,5 @@
 import { JSX } from 'react';
 
-export function ProductCart(): JSX.Element {
+export function ProductCart(): React.ReactNode {
   return <div>ProductCar</div>;
 }
