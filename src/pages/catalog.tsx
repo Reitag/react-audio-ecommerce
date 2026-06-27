@@ -1,16 +1,26 @@
-import { ItemCard } from '@/components/item-card/item-card';
-import './pages.css';
+import { ItemCard } from '@/components/item-card';
+import { headphones } from '@/data/data';
+import { Box, Grid, Typography } from '@mui/material';
 
 export function Catalog(): React.ReactNode {
-  const itemCardArray = [1, 2, 3, 4, 5, 6];
   return (
-    <div className="catalog-page">
-      <div className="catalog-page-title">Наушники</div>
-      <div className="catalog-page-grid">
-        {itemCardArray.map(() => {
-          return <ItemCard />;
+    <Box component="section" sx={{ display: 'flex', flexDirection: 'column', padding: '20px 0px' }}>
+      <Typography
+        variant="h5"
+        component="h2"
+        sx={{ fontWeight: 'bold', color: '#1a1a1a', marginBottom: '16px' }}
+      >
+        Наушники
+      </Typography>
+      <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
+        {headphones.map((item, index) => {
+          return (
+            <Grid key={item.title} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <ItemCard key={index} data={item} />
+            </Grid>
+          );
         })}
-      </div>
-    </div>
+      </Grid>
+    </Box>
   );
 }
